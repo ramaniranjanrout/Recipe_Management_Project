@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <h1>Recipe Management System</h1>
+            <p>Find your favorite meals and save your profile!</p>
+        </header>
+
+<section class="profile-box">
+            <h2>Create Your Profile</h2>
+            <form id="userForm">
+                <label>Full Name:</label>
+                <input type="text" id="userName" placeholder="Enter your name" required>
+
+                <label>Cooking Skill:</label>
+                <select id="userSkill">
+                    <option value="Select">Select your skill</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+                </select>
+
+                <label>Diet Preference:</label>
+                <select id="userDiet">
+                    <option value="None">None</option>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Vegan">Vegan</option>
+                </select>
+
+                <label>Allergies (Ingredients to avoid):</label>
+                <input type="text" id="userAllergies" placeholder="e.g. Peanuts, Dairy">
+
+                <label>Favorite Ingredients:</label>
+                <input type="text" id="favIngredients" placeholder="e.g. Chicken, Garlic">
+
+                <button type="submit">Save Profile</button>
+            </form>
+        </section>
+
+       <section class="search-box">
+            <h2>Search Recipes</h2>
+            <div class="search-row">
+                <input type="text" id="searchInput" placeholder="Type a recipe name (e.g., Pasta)">
+                
+                <select id="categoryFilter">
+                    <option value="">All Categories</option>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Seafood">Seafood</option>
+                    <option value="Chicken">Chicken</option>
+                </select>
+                
+                <button id="searchBtn">Search</button>
+            </div>
+        </section>
+
+        <div id="recipeContainer" class="recipe-grid">
+            </div>
+
+        <div id="reviewModal" class="modal">
+            <div class="modal-content">
+                <span id="closeModal" class="close-btn">&times;</span>
+                <h3>Write a Review</h3>
+                <p id="recipeNameDisplay" style="color: blue;"></p>
+                <input type="hidden" id="currentRecipeId">
+
+                <label>Rating (1 to 5):</label>
+                <input type="number" id="ratingInput" min="1" max="5">
+
+                <label>Your Comments:</label>
+                <textarea id="commentInput" rows="4"></textarea>
+
+                <button id="submitReviewBtn">Submit Review</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
